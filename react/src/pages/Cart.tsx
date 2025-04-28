@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { usePurchase } from '../context/PurchaseContext';
-import { useUser } from '../context/UserContext'; // ✅ 포인트 관련 context 추가
+import { useUser } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 
 const Cart: React.FC = () => {
   const { cartItems, removeFromCart, clearSelectedItems } = useCart();
   const { addPurchase } = usePurchase();
-  const { ecoPoints, setEcoPoints } = useUser(); // ✅ ecoPoint 상태 접근
+  const { ecoPoints, setEcoPoints } = useUser();
   const [selected, setSelected] = useState<number[]>([]);
   const navigate = useNavigate();
 
@@ -45,14 +45,13 @@ const Cart: React.FC = () => {
     });
 
     if (success) {
-      addPurchase(selectedItems); // ✅ 구매 이력 반영
+      addPurchase(selectedItems);
 
-      // ✅ 포인트 누적 로직 추가
       const gainedPoints = selectedItems.reduce(
         (sum, item) => sum + Math.floor(item.ecoScore / 10),
         0
       );
-      setEcoPoints(ecoPoints + gainedPoints); // ✅ 포인트 누적
+      setEcoPoints(ecoPoints + gainedPoints);
 
       clearSelectedItems(selected);
       setSelected([]);

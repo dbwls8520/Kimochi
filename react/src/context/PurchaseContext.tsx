@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 import { Product } from '../types/Product';
 
 interface PurchaseItem extends Product {
-  purchasedAt: string; // 날짜 저장
+  purchasedAt: string;
 }
 
 interface PurchaseContextType {

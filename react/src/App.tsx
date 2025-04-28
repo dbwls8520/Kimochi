@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
-import ProductDetail from './pages/ProductDetail'; // 상세 페이지 import
+import ProductDetail from './pages/ProductDetail';
 import { CartProvider } from './context/CartContext';
 import Cart from './pages/Cart';
 import PaymentResult from './pages/PaymentResult';

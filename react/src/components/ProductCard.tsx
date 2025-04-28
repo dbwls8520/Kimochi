@@ -18,7 +18,7 @@ const ProductCard: React.FC<Props> = ({
   const navigate = useNavigate();
 
   const handleCartToggle = (e: React.MouseEvent) => {
-    e.stopPropagation(); // 카드 클릭 막기
+    e.stopPropagation();
     if (inCart) removeFromCart(id);
     else
       addToCart({

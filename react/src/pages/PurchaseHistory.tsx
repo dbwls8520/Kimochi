@@ -14,7 +14,7 @@ const groupByDate = (items: ReturnType<typeof usePurchase>['purchaseHistory']) =
     if (!map.has(date)) map.set(date, []);
     map.get(date)!.push(item);
   });
-  return Array.from(map.entries()).sort((a, b) => (a[0] < b[0] ? 1 : -1)); // 최신순 정렬
+  return Array.from(map.entries()).sort((a, b) => (a[0] < b[0] ? 1 : -1));
 };
 
 const PurchaseHistory: React.FC = () => {

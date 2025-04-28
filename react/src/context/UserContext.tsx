@@ -16,7 +16,7 @@ export const useUser = (): UserContextType => {
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [ecoPoints, setEcoPoints] = useState(0);
-  const email = 'user@example.com'; // 더미 이메일
+  const email = 'user@example.com';
 
   return (
     <UserContext.Provider value={{ email, ecoPoints, setEcoPoints }}>
